@@ -92,8 +92,6 @@ print(label_encoder.inverse_transform(sample_categories))
 #2 - Electronics
 #3 - Household
 
-#X_split.head()
-
 SEED = 42
 
 X_train, X_split, y_train, y_split = model_selection.train_test_split(features, label, train_size=0.7, random_state=SEED)
@@ -191,5 +189,4 @@ y_pred = np.argmax(y_pred, axis=1)
 
 print('F1 score:', sklearn.metrics.f1_score(y_test, y_pred, average='weighted'))
 
-with open("nlp_model.h5", "wb",)as f:
-    pickle.dump(label_encoder,f)
+model.save("nlp_model.h5")
